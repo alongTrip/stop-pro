@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="echarts.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <div class="main">
+            <div class="main header">
+                <div class="datav-wraper">驿 亭 智 慧 停 车 指 挥 中 心</div>
+            </div>
+            <div class="main content">
+                <div class="cn-left">
+                    <h3 class="title" >母公司营业收入同比情况</h3>
+                    <p class="en-title"><span>Parking situation</span></p>
+                    <div id="progress-left" style="width:375px;height:450px;">
+
+                    </div>
+                </div>
+                <!-- <div class="cn-center-map">
+
+                </div> -->
+                <!-- <div class="cn-center">
+
+                </div> -->
+                <div class="cn-right">
+                    <h3 class="title">客户资产分布</h3>
+                    <p class="en-title"><span>Parking situation</span></p>
+                    <div class="progress-right">
+                        <div id="progress-top" style="width:336px;height:220px;"></div>
+                        <div id="progress-bottom" style="width:336px;height:150px;top:-15px;"></div>
+                    </div>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <li>
+                            <h3 class="title" style="padding-top:10px;">营业收入(万元)</h3>
+                            <p class="en-title"><span>wehicle flowrate</span></p>
+                            <h4 style="height:50px;line-height:50px;font-weight:normal">421,937</h4>
+                            <p>排名 28 <b>↑ 3</b></p>
+                            <p>同比 <b>＋ 0.5%</b></p>
+
+                        </li>
+                        <li>
+                            <h3 class="title" style="padding-top:10px;">净利润(万元)</h3>
+                            <p class="en-title"><span>Violation park</span></p>
+                            <h4 style="height:50px;line-height:50px;font-weight:normal">121,937</h4>
+                            <p>排名 <b>25↑ 3</b></p>
+                            <p>同比 <b>－ 0.5%</b></p>
+                        </li>
+                        <li>
+                            <h3 class="title" style="padding-top:10px;">市场份额</h3>
+                            <p class="en-title"><span>Business  pressure</span></p>
+                            <h4 style="height:50px;line-height:50px;font-weight:normal">7.02%</h4>
+                            <p> 较上一日 <b>＋ 0.5%</b></p>
+                            <p>同比 <b>＋ 11.5%</b></p>
+                        </li>
+                        <li>
+                            <h3 class="title" style="padding-top:10px;">总客户数</h3>
+                            <p class="en-title"><span>Traffic points pressure</span></p>
+                            <h4 style="height:50px;line-height:50px;font-weight:normal">1,654,213</h4>
+                            <p>有效户率 <b>16.3%</b></p>
+                            <p>同比 <b>＋ 3.5%</b></p>
+                        </li>
+                        <li>
+                            <h3 class="title" style="padding-top:10px;">客户资产总额(万元)</h3>
+                            <p class="en-title"><span>Metered  pressure</span></p>
+                            <h4 style="height:50px;line-height:50px;font-weight:normal">5,555,555</h4>
+                            <p>较上一日 <b>0.2%</b></p>
+                            <p>同比 <b>＋ 2%</b></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="warning">
+                    <h3 class="title">新增客户情况</h3>
+                    <p class="en-title"><span>Suspicious  warning</span></p>   
+                    <div id="add-person" style="width:336px;height:220px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+//母公司营业收入同比情况
+  var myChart = echarts.init(document.getElementById('progress-left'));
+  var option = {
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    legend: {
+        data: ['2018年1-6月', '去年同期'],
+        textStyle:{
+          color:'#fff',
+          fontSize:10
+        },
+        x:'150px',
+        y:'bottom',
+        itemWidth:12,
+        itemHeight:12
+    },
+    grid: {
+        left: '0.01%',
+        top:'2%',
+        right: '4%',
+        bottom: '7%',
+        containLabel: true
+    },
+    xAxis: {
+        type: 'value',
+        boundaryGap: [0, 0.01],
+        axisLabel:{
+           color:'#fff',
+           fontSize:10,
+        },
+        max:50000,
+        splitLine: {
+            show: true,
+            lineStyle:{
+                 color: ['#ccc'],
+                 width: 1,
+                type: 'dashed'  
+            }
+        },
+        // axisLine:{
+        //     show:true,
+        //     color:'#fff'
+        // },
+    },
+    yAxis: {
+        type: 'category',
+        data: ['证券投资收益','融资融券业务利息收入','证券经纪业务净收入','投行业务净收入','受托资产管理费净收入','股权投资收益'],
+        axisLabel:{
+           color:'#fff',
+           fontSize:10,
+        }
+    },
+    series: [
+        {
+            name: '2018年1-6月',
+            type: 'bar',
+            data: [10000, 11000, 28000, 29000, 31000, 41000],
+            itemStyle:{
+              normal:{
+                color:'rgb(53, 189, 208)'
+              }
+            }
+        },
+        {
+            name: '去年同期',
+            type: 'bar',
+            data: [10000, 12000, 11000, 31000, 32100, 21000],
+            itemStyle:{
+              normal:{
+                color:'rgb(208, 106, 77)'
+              }
+            }
+        }
+    ]
+};
+myChart.setOption(option);
+
+//客户资产分布
+var aChart = echarts.init(document.getElementById('progress-top'));
+var option = {
+    tooltip : {
+        trigger: 'axis'
+    },
+    color:['rgb(53, 189, 208)','rgb(208, 106, 77)','rgb(182, 187, 106)','rgba(208, 106, 77, 0.3)','rgb(58, 61, 117)','rgba(51,163,179,0.7)'],
+    grid: {
+        left: '1%',
+        top:'5%',
+        right: '4%',
+        bottom: '20%',
+        containLabel: true,
+    },
+    legend: {
+        data:['5千-2万','2万-10万','10万-30万','30万-50万','50万-100万','100万以上'],
+        x:'left',
+        y:'bottom',
+        itemWidth:12,
+        itemHeight:12,
+        padding:[0,12],
+        textStyle:{
+          color:'#fff',
+          fontSize:10
+        },
+    },
+    xAxis : [
+        {
+            type : 'category',
+            data : ['',]
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value',
+            min:'0',
+            max:200000,
+            axisLabel:{
+            color:'#fff',
+            fontSize:10,
+            },
+            splitLine: {
+            show: true,
+            lineStyle:{
+                 color: ['#ccc'],
+                 width: 1,
+                type: 'dashed'  
+            }
+        },
+        }
+    ],
+    series : [
+        {
+            name:'5千-2万',
+            type:'bar',
+            data:[130000],
+        },
+        {
+            name:'2万-10万',
+            type:'bar',
+            data:[170000],
+        },
+        {
+            name:'10万-30万',
+            type:'bar',
+            data:[80000],
+        },
+        {
+            name:'30万-50万',
+            type:'bar',
+            data:[30000],
+        },
+        {
+            name:'50万-100万',
+            type:'bar',
+            data:[28000],
+        },
+        {
+            name:'100万以上',
+            type:'bar',
+            data:[27000],
+        }
+    ]
+};
+aChart.setOption(option);
+
+//客户资产分布
+var bChart = echarts.init(document.getElementById('progress-bottom'));
+var option = {
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    color:['rgb(53, 189, 208)','rgb(208, 106, 77)'],
+    // legend: {
+    //     x: 'center',
+    //     y:'bottom',
+    //     data:['资产<5000的客户','有效户',],
+    //     textStyle:{
+    //       color:'#fff',
+    //       fontSize:10
+    //     },
+    //     itemWidth:12,
+    //     itemHeight:12,
+    // },
+    series : [
+        {
+            name: '客户资产分布',
+            type: 'pie',
+            radius: ['25%', '60%'],
+            center: ['50%', '60%'],
+            data:[
+                {value:335, name:'资产<5000的客户'},
+                {value:60, name:'有效户'},
+            ],
+            itemStyle: {
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+
+bChart.setOption(option);
+
+//新增客户情况
+var dChart = echarts.init(document.getElementById('add-person'));
+var option = {
+    tooltip : {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'cross',
+            label: {
+                backgroundColor: '#6a7985'
+            }
+        }
+    },
+    legend: {
+        data:['总客户数','有效客户数'],
+        x:'center',
+        y:'bottom',
+        textStyle:{
+          color:'#fff'
+        },
+    },
+    grid: {
+        left: '3%',
+        top:'5%',
+        right: '4%',
+        bottom: '12%',
+        containLabel: true,
+    },
+    xAxis : [
+        {
+            type : 'category',
+            boundaryGap : false,
+            data : ['2018年1月','2018年2月','2018年3月','2018年4月','2018年5月','2018年6月','2018年7月','2018年8月'],
+            axisLabel:{
+            color:'#fff',
+            fontSize:10,
+            },
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value',
+            axisLine:{
+                show:true,
+                lineStyle:{
+                    color:'#333'
+                },
+            },
+            axisLabel:{
+                show:true
+            },
+            axisTick: {
+                show: true
+            },
+            max:120,
+            splitLine: {
+                show: true,
+                lineStyle:{
+                color: ['#ccc'],
+                width:1,
+                type: 'dashed'
+                }
+            },
+            axisLabel:{
+            color:'#fff',
+            fontSize:10,
+            },
+        }
+    ],
+    series : [
+        {
+            name:'总客户数',
+            type:'line',
+            stack: '总量',
+            areaStyle: {},
+            data:[25, 18, 30, 40, 36, 30, 20, 43],
+            itemStyle:{
+                normal:{
+                    color:'rgb(53, 189, 208)'
+                }
+            }
+        },
+        {
+            name:'有效客户数',
+            type:'line',
+            stack: '总量',
+            areaStyle: {},
+            data:[25, 18, 20, 40, 36, 40, 30, 43],
+            itemStyle:{
+                normal:{
+                    color:'rgb(208, 106, 77)'
+                }
+            }
+        },
+    ]
+};
+dChart.setOption(option);
+</script>
+</html>
