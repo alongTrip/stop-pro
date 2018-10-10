@@ -4,43 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>长城证券智能驾驶舱</title>
     <link rel="stylesheet" href="index.css">
     <script src="echarts.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
 </head>
 <body>
     <div id="wrap">
         <div class="main">
             <div class="main header">
-                <div class="datav-wraper">驿 亭 智 慧 停 车 指 挥 中 心</div>
+                <div class="datav-wraper">长 城 证 券 智 能 驾 驶 舱</div>
             </div>
             <div class="main content">
                 <div class="cn-left">
                     <h3 class="title" >母公司营业收入同比情况</h3>
-                    <p class="en-title"><span>Parking situation</span></p>
-                    <div id="progress-left" style="width:375px;height:450px;">
-
-                    </div>
+                    <p class="en-title"><span class="en-title-span" style="left:16px;">Parking situation</span></p>
+                    <div id="progress-left" style="width:375px;height:450px;"></div>
                 </div>
-                <!-- <div class="cn-center-map">
-
-                </div> -->
-                <!-- <div class="cn-center">
-
-                </div> -->
+                <div class="cn-center">
+                    <h3 class="title" >佣金收入分布</h3>
+                    <p class="en-title"><span class="en-title-span" style="left:22px;">Parking situation</span></p>
+                    <div id="center-map" style="width: 610px;height: 450px;"></div>
+                </div>
                 <div class="cn-right">
                     <h3 class="title">客户资产分布</h3>
-                    <p class="en-title"><span>Parking situation</span></p>
+                    <p class="en-title"><span class="en-title-span" style="left:-9px;">Parking situation</span></p>
                     <div class="progress-right">
-                        <div id="progress-top" style="width:336px;height:220px;"></div>
-                        <div id="progress-bottom" style="width:336px;height:150px;top:-15px;"></div>
+                        <div id="progress-bottom" style="width:336px;height:150px;left:-10px;top:-10px;"></div>
+                        <div id="progress-top" style="width:336px;height:211px;"></div>
                     </div>
                 </div>
                 <div class="nav">
                     <ul>
                         <li>
                             <h3 class="title" style="padding-top:10px;">营业收入(万元)</h3>
-                            <p class="en-title"><span>wehicle flowrate</span></p>
+                            <p class="en-title"><span class="en-title-span" style="left:10px;">wehicle flowrate</span></p>
                             <h4 style="height:50px;line-height:50px;font-weight:normal">421,937</h4>
                             <p>排名 28 <b>↑ 3</b></p>
                             <p>同比 <b>＋ 0.5%</b></p>
@@ -48,38 +46,38 @@
                         </li>
                         <li>
                             <h3 class="title" style="padding-top:10px;">净利润(万元)</h3>
-                            <p class="en-title"><span>Violation park</span></p>
+                            <p class="en-title"><span class="en-title-span" style="left:10px;">Violation park</span></p>
                             <h4 style="height:50px;line-height:50px;font-weight:normal">121,937</h4>
                             <p>排名 <b>25↑ 3</b></p>
                             <p>同比 <b>－ 0.5%</b></p>
                         </li>
                         <li>
                             <h3 class="title" style="padding-top:10px;">市场份额</h3>
-                            <p class="en-title"><span>Business  pressure</span></p>
+                            <p class="en-title"><span class="en-title-span" style="left:10px;">Business  pressure</span></p>
                             <h4 style="height:50px;line-height:50px;font-weight:normal">7.02%</h4>
                             <p> 较上一日 <b>＋ 0.5%</b></p>
                             <p>同比 <b>＋ 11.5%</b></p>
                         </li>
                         <li>
                             <h3 class="title" style="padding-top:10px;">总客户数</h3>
-                            <p class="en-title"><span>Traffic points pressure</span></p>
+                            <p class="en-title"><span class="en-title-span" style="left:7px;">Traffic points pressure</span></p>
                             <h4 style="height:50px;line-height:50px;font-weight:normal">1,654,213</h4>
                             <p>有效户率 <b>16.3%</b></p>
                             <p>同比 <b>＋ 3.5%</b></p>
                         </li>
                         <li>
                             <h3 class="title" style="padding-top:10px;">客户资产总额(万元)</h3>
-                            <p class="en-title"><span>Metered  pressure</span></p>
+                            <p class="en-title"><span class="en-title-span" style="left:10px;">Metered  pressure</span></p>
                             <h4 style="height:50px;line-height:50px;font-weight:normal">5,555,555</h4>
-                            <p>较上一日 <b>0.2%</b></p>
+                            <p>较上一日 <b>↑ 0.2%</b></p>
                             <p>同比 <b>＋ 2%</b></p>
                         </li>
                     </ul>
                 </div>
                 <div class="warning">
                     <h3 class="title">新增客户情况</h3>
-                    <p class="en-title"><span>Suspicious  warning</span></p>   
-                    <div id="add-person" style="width:336px;height:220px;"></div>
+                    <p class="en-title"><span class="en-title-span" style="left:-9px;">Suspicious  warning</span></p>   
+                    <div id="add-person" style="width:336px;height:240px;"></div>
                 </div>
             </div>
         </div>
@@ -93,7 +91,10 @@
         trigger: 'axis',
         axisPointer: {
             type: 'shadow'
-        }
+        },
+        textStyle:{
+            fontSize:9,
+        },
     },
     legend: {
         data: ['2018年1-6月', '去年同期'],
@@ -120,19 +121,24 @@
            color:'#fff',
            fontSize:10,
         },
+        axisLine:{
+            lineStyle:{
+                color:'rgb(34, 50, 73)',
+                width:0.5
+            }
+        },
+        axisTick: {
+            show: false
+        },
         max:50000,
         splitLine: {
             show: true,
             lineStyle:{
-                 color: ['#ccc'],
-                 width: 1,
+                 color: ['rgb(34, 50, 73)'],
+                 width:0.5,
                 type: 'dashed'  
             }
         },
-        // axisLine:{
-        //     show:true,
-        //     color:'#fff'
-        // },
     },
     yAxis: {
         type: 'category',
@@ -140,13 +146,23 @@
         axisLabel:{
            color:'#fff',
            fontSize:10,
-        }
+        },
+        axisLine:{
+            lineStyle:{
+                color:'rgb(34, 50, 73)',
+                width:0.5
+            }
+        },
+        axisTick: {
+            show: false
+        },
     },
     series: [
         {
             name: '2018年1-6月',
             type: 'bar',
             data: [10000, 11000, 28000, 29000, 31000, 41000],
+            barCategoryGap:'32%',
             itemStyle:{
               normal:{
                 color:'rgb(53, 189, 208)'
@@ -157,6 +173,7 @@
             name: '去年同期',
             type: 'bar',
             data: [10000, 12000, 11000, 31000, 32100, 21000],
+            barCategoryGap:'35%',
             itemStyle:{
               normal:{
                 color:'rgb(208, 106, 77)'
@@ -171,7 +188,10 @@ myChart.setOption(option);
 var aChart = echarts.init(document.getElementById('progress-top'));
 var option = {
     tooltip : {
-        trigger: 'axis'
+        trigger: 'axis',
+        textStyle:{
+            fontSize:9,
+        }
     },
     color:['rgb(53, 189, 208)','rgb(208, 106, 77)','rgb(182, 187, 106)','rgba(208, 106, 77, 0.3)','rgb(58, 61, 117)','rgba(51,163,179,0.7)'],
     grid: {
@@ -183,21 +203,30 @@ var option = {
     },
     legend: {
         data:['5千-2万','2万-10万','10万-30万','30万-50万','50万-100万','100万以上'],
-        x:'left',
+        x:'5px',
         y:'bottom',
         itemWidth:12,
         itemHeight:12,
         padding:[0,12],
         textStyle:{
           color:'#fff',
-          fontSize:10
+          fontSize:9
         },
     },
     xAxis : [
         {
             type : 'category',
-            data : ['',]
-        }
+            data : ['',],
+            axisLine:{
+                lineStyle:{
+                    color:'rgb(54, 86, 104)',
+                    width:0.5
+                }
+             },
+           axisTick: {
+            show: false
+          },
+      }
     ],
     yAxis : [
         {
@@ -205,17 +234,26 @@ var option = {
             min:'0',
             max:200000,
             axisLabel:{
-            color:'#fff',
-            fontSize:10,
+                color:'#fff',
+                fontSize:10,
             },
+            axisLine:{
+                lineStyle:{
+                    color:'rgb(54, 86, 104)',
+                    width:0.5
+                }
+             },
+           axisTick: {
+            show: false
+           },
             splitLine: {
             show: true,
             lineStyle:{
-                 color: ['#ccc'],
-                 width: 1,
+                 color: ['rgb(43, 64, 83)'],
+                 width: 0.5,
                 type: 'dashed'  
             }
-        },
+          },
         }
     ],
     series : [
@@ -223,6 +261,7 @@ var option = {
             name:'5千-2万',
             type:'bar',
             data:[130000],
+            barGap:1
         },
         {
             name:'2万-10万',
@@ -258,25 +297,17 @@ var bChart = echarts.init(document.getElementById('progress-bottom'));
 var option = {
     tooltip : {
         trigger: 'item',
-        formatter: "{a} <br/>{b} : {c} ({d}%)"
+        formatter: "{a} <br/>{b} : {c} ({d}%)",
+        textStyle:{
+            fontSize:10,
+        },
     },
     color:['rgb(53, 189, 208)','rgb(208, 106, 77)'],
-    // legend: {
-    //     x: 'center',
-    //     y:'bottom',
-    //     data:['资产<5000的客户','有效户',],
-    //     textStyle:{
-    //       color:'#fff',
-    //       fontSize:10
-    //     },
-    //     itemWidth:12,
-    //     itemHeight:12,
-    // },
     series : [
         {
             name: '客户资产分布',
             type: 'pie',
-            radius: ['25%', '60%'],
+            radius: ['40%', '70%'],
             center: ['50%', '60%'],
             data:[
                 {value:335, name:'资产<5000的客户'},
@@ -305,14 +336,19 @@ var option = {
             label: {
                 backgroundColor: '#6a7985'
             }
-        }
+        },
+        textStyle:{
+            fontSize:10,
+        },
+        padding:[0,0,0,10]
     },
     legend: {
         data:['总客户数','有效客户数'],
         x:'center',
         y:'bottom',
         textStyle:{
-          color:'#fff'
+          color:'#fff',
+          fontSize:10
         },
     },
     grid: {
@@ -329,34 +365,40 @@ var option = {
             data : ['2018年1月','2018年2月','2018年3月','2018年4月','2018年5月','2018年6月','2018年7月','2018年8月'],
             axisLabel:{
             color:'#fff',
-            fontSize:10,
+            fontSize:9,
             },
+            axisLine:{
+                lineStyle:{
+                    color:'rgb(39, 61, 81)',
+                    width:0.5
+                }
+             },
+           axisTick: {
+            show: true
+          },
         }
     ],
     yAxis : [
         {
             type : 'value',
-            axisLine:{
-                show:true,
-                lineStyle:{
-                    color:'#333'
-                },
-            },
-            axisLabel:{
-                show:true
-            },
-            axisTick: {
-                show: true
-            },
             max:120,
             splitLine: {
                 show: true,
                 lineStyle:{
-                color: ['#ccc'],
-                width:1,
+                color: ['rgb(39, 61, 81)'],
+                width:0.5,
                 type: 'dashed'
                 }
             },
+            axisLine:{
+                lineStyle:{
+                    color:'rgb(39, 65, 86)',
+                    width:0.5
+                }
+             },
+           axisTick: {
+            show: false
+          },
             axisLabel:{
             color:'#fff',
             fontSize:10,
@@ -372,7 +414,10 @@ var option = {
             data:[25, 18, 30, 40, 36, 30, 20, 43],
             itemStyle:{
                 normal:{
-                    color:'rgb(53, 189, 208)'
+                    color:'rgb(53, 189, 208)',
+                    lineStyle:{
+                        color:'rgb(53, 189, 208)'
+                    }
                 }
             }
         },
@@ -384,12 +429,131 @@ var option = {
             data:[25, 18, 20, 40, 36, 40, 30, 43],
             itemStyle:{
                 normal:{
-                    color:'rgb(208, 106, 77)'
+                    color:'rgb(208, 106, 77)',
+                    lineStyle:{
+                        color:'rgb(208, 106, 77)'
+                    }
                 }
             }
         },
     ]
 };
 dChart.setOption(option);
+
+//佣金收入分布
+function randomValue() {
+    return Math.round(Math.random()*1000);
+}
+
+option = {
+    tooltip: {
+        textStyle:{
+            fontSize:10,
+        }
+    },
+    visualMap: {
+        min: 0,
+        max: 2000,
+        text:['High','Low'],
+        realtime: false,
+        calculable: true,
+        inRange: {
+            // color: ['#e0ffff', '#006edd']
+            color:['rgb(53, 189, 208)','rgb(208, 106, 77)'],
+        },
+        textStyle:{
+            color:'#fff',
+            fontSize:11
+        }
+    },
+    geo: {
+        map: 'china',
+        roam: true,
+        label: {
+            normal: {
+                show: true,
+                textStyle: {
+                    color: 'rgba(0,0,0,0.4)'
+                }
+            }
+        },
+        itemStyle: {
+            normal:{
+                borderColor: 'rgba(0, 0, 0, 0.2)'
+            },
+            emphasis:{
+                areaColor: 'rgb(182, 187, 106)',
+                shadowOffsetX: 0,
+                shadowOffsetY: 0,
+                shadowBlur: 20,
+                borderWidth: 0,
+                shadowColor: 'rgba(0, 0, 0, 0.5)'
+            }
+        }
+    },
+    series : [
+        {
+            name: '浏览量',
+            type: 'map',
+            roam: true,
+            coordinateSystem: 'geo',
+            geoIndex: 0,
+            // tooltip: {show: false},
+            label: {
+                normal: {
+                    formatter: '{b}',
+                    position: 'right',
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            itemStyle: {
+                normal: {
+                    color: '#F06C00'
+                }
+            },
+            data:[
+                {name: '北京', value: randomValue()},
+                {name: '天津', value: randomValue()},
+                {name: '上海', value: randomValue()},
+                {name: '重庆', value: randomValue()},
+                {name: '河北', value: randomValue()},
+                {name: '河南', value: randomValue()},
+                {name: '云南', value: randomValue()},
+                {name: '辽宁', value: randomValue()},
+                {name: '黑龙江', value: randomValue()},
+                {name: '湖南', value: randomValue()},
+                {name: '安徽', value: randomValue()},
+                {name: '山东', value: randomValue()},
+                {name: '新疆', value: randomValue()},
+                {name: '江苏', value: randomValue()},
+                {name: '浙江', value: randomValue()},
+                {name: '江西', value: randomValue()},
+                {name: '湖北', value: randomValue()},
+                {name: '广西', value: randomValue()},
+                {name: '甘肃', value: randomValue()},
+                {name: '山西', value: randomValue()},
+                {name: '内蒙古', value: randomValue()},
+                {name: '陕西', value: randomValue()},
+                {name: '吉林', value: randomValue()},
+                {name: '福建', value: randomValue()},
+                {name: '贵州', value: randomValue()},
+                {name: '广东', value: randomValue()},
+                {name: '青海', value: randomValue()},
+                {name: '西藏', value: randomValue()},
+                {name: '四川', value: randomValue()},
+                {name: '宁夏', value: randomValue()},
+                {name: '海南', value: randomValue()},
+                {name: '台湾', value: randomValue()},
+                {name: '香港', value: randomValue()},
+                {name: '澳门', value: randomValue()}
+            ]
+        }
+    ]
+};
+var chart=echarts.init(document.getElementById("center-map"))
+chart.setOption(option)
 </script>
 </html>

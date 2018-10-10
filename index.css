@@ -48,6 +48,7 @@ body{
     padding-left:25px;
     float:left;
     margin-right:0;
+    position: relative;
 }
 #progress-left{
     width: 375px;
@@ -59,6 +60,7 @@ body{
 .title{
     font-size:15px;
     color:rgb(255, 255, 255);
+    font-weight:normal;
 }
 .en-title{
     font-size:12px;
@@ -66,23 +68,28 @@ body{
     height:20px;
     line-height:20px;
 }
-span{
+.en-title-span{
     display: inline-block;
-    transform: scale(1);
+    transform: scale(0.8);
+    position:absolute;    
 }
 .cn-center{
+    width: 579px;
+    padding-left:31px;
     float:left;
-    width: 640px;
+    position:relative;
+}
+#center-map{
+    width: 610px;
     height: 450px;
-    background: rgba(255, 255, 255, 0.2);
-    margin-top:39px;
-    /* margin-left:340px; */
+    /* background: rgba(255, 255, 255, 0.2); */
 }
 .cn-right{
     float:right;
     width:336px;
     height:365px;
     margin-right:25px;
+    position: relative;
 }
 .progress-right{
     width:336px;
@@ -97,7 +104,7 @@ span{
 }
 #progress-bottom{
     width:336px;
-    height:146px;
+    height:150px;
 }
 .nav{
     width:999px;
@@ -115,6 +122,7 @@ li{
     padding-top:10px;
     color:#fff;
     padding-left:20px;
+    position: relative;
 }
 p{
     height:30px;
@@ -123,13 +131,16 @@ p{
 }
 .warning{
     width:336px;
-    height:260px;
-    background: rgba(255, 255, 255, 0.03);
+    height:280px;
     position:absolute;
     left:1040px;
     top:420px;
-    padding-top:20px;
     margin-right:20px;
+}
+#add-person{
+    width:336px;
+    height:280px;
+    background: rgba(255, 255, 255, 0.03);
 }
 b{
     font-weight: normal;
