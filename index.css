@@ -1,23 +1,30 @@
-*{
-    padding:0;margin:0;
+html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {
+    margin: 0;
+    padding: 0;
 }
-body{
+h1, h2, h3, h4, h5, h6{font-weight:normal;}
+ul,ol {
+    list-style: none;
+}
+body,html{
     width: 100%;
     height:100%;
     background-image: url("https://datav.oss-cn-hangzhou.aliyuncs.com/uploads/images/f86b2ac1cac415bb226e7810f54f7dd5.jpg"); 
-    overflow: hidden;
+    background-size:93.78% 100%;
+    overflow: auto;
 }
 #wrap{
     width: 100%;
-    height: 100%;
+    height:789px;
 }
 .main{
     width: 1400px; 
-    height: 1080px; 
+    height: 788px; 
+    /* height:709px; */
     background: rgba(0, 32, 45, 0.45);
     margin:0 auto;
 }
-.content{
+.content{  
     position: relative;
 }
 .header{
@@ -51,7 +58,7 @@ body{
     position: relative;
 }
 #progress-left{
-    width: 375px;
+    width: 365px;
     height: 450px;
     border: none;
     background: rgba(255, 255, 255, 0.1);
@@ -74,8 +81,8 @@ body{
     position:absolute;    
 }
 .cn-center{
-    width: 579px;
-    padding-left:31px;
+    width: 589px;
+    padding-left:21px;
     float:left;
     position:relative;
 }
