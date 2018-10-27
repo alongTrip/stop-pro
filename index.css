@@ -9,60 +9,144 @@ ul,ol {
 body,html{
     width: 100%;
     height:100%;
-    background-image: url("https://datav.oss-cn-hangzhou.aliyuncs.com/uploads/images/f86b2ac1cac415bb226e7810f54f7dd5.jpg"); 
+    background-image: url("img/bgimg.jpg");
     background-size:100% 100%;
     overflow: auto;
 }
 #wrap{
-    width: 100%;
-    height:789px;
+    width: 1400px;
+    height: 789px;
+    position: absolute;
+    display:none
+}
+.content:after,.great-stock:after{
+    content: '';
+    display: block;
+    clear: both;
 }
 .main{
-    /* width: 1400px;  */
-    width:87.5%;
-    height: 788px; 
+    width: 1400px;
+    height: 788px;
     background: rgba(0, 32, 45, 0.45);
     margin:0 auto;
 }
-.content{  
+.content{
     position: relative;
 }
 .header{
-    width:100%; 
-    height: 80px; 
-    background-image: url("https://datav.oss-cn-hangzhou.aliyuncs.com/uploads/images/0a65428621ef59ccb130accb7d4eb489.png"); 
-    background-repeat: no-repeat; 
+    width:100%;
+    height: 80px;
+    background-image: url("https://datav.oss-cn-hangzhou.aliyuncs.com/uploads/images/0a65428621ef59ccb130accb7d4eb489.png");
+    background-repeat: no-repeat;
     background-size: 100% 100%;
+    position: relative;
 }
 .datav-wraper{
-    /* width: 645px;  */
-    width:46.07%;
-    height: 70px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    color: rgb(255, 255, 255); 
-    font-weight: bolder; 
-    font-family: "Microsoft Yahei", Arial, sans-serif; 
-    font-size: 29px; 
+    width: 645px;
+    /* width:46.07%; */
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    font-family: "Microsoft Yahei", Arial, sans-serif;
+    font-size: 29px;
     text-overflow: ellipsis;
-    white-space: nowrap; 
+    white-space: nowrap;
     overflow: hidden;
     margin:0 auto;
+}
+.great-stock{
+    width:100%;
+    height:62px;
+    background: rgba(255, 255, 255, 0.2);
+    position: relative;
+}
+.share-price{
+    width:80px;
+    height:62px;
+    line-height:62px;
+    font-size:27px;
+    font-weight:bold;
+    text-align:center;
+    color:#E41D25;
+    float:left;
+}
+#stock{
+    width:209px;
+    height:100%;
+    float:left;
+    /* background: url(img/img.jpg) no-repeat; */
+    background-size:100% 100%;
+}
+.change-box{
+    width:64px;
+    height:58px;
+    float:left;
+    padding-top:4px;
+    margin-left:5px;
+}
+.box-border{
+    border-bottom:1px solid #ccc;
+    width:183px;
+    height:1px;
+    position:absolute;
+    right:0;
+    top:35px;
+    float:right;
+    transform: scaleY(0.8);
+    opacity: 0.6;
+}
+.closing-price{
+    position:absolute;
+    top:27px;
+    left:155px;
+    font-size:12px;
+    color:#fff
+}
+.change{
+    color:#E41D25;
+    font-size:14px;
+}
+.time-box{
+    width:213px;
+    height:58px;
+    position:absolute;
+    right:28px;
+    top:23px;
+    padding-right:10px;
+}
+.times{
+    width:100%;
+    height:30px;
+    text-align:right;
+    line-height:30px;
+    color:#fff;
+    font-size:16px
+}
+.datas{
+    width:100%;
+    height:30px;
+    text-align:right;
+    line-height:30px;
+    color:#fff;
+    font-size:13px
 }
 .cn-left{
     width: 358px;
     /* width:25.58%; */
-    height: 510px;
+    height: 523px;
     padding-left:25px;
     float:left;
     margin-right:0;
     position: relative;
+    /* padding-top:100px; */
 }
 #progress-left{
     width: 365px;
     /* width:100%; */
-    height: 450px;
+    height: 359px;
     border: none;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 0px;
@@ -81,13 +165,35 @@ body,html{
 .en-title-span{
     display: inline-block;
     transform: scale(0.8);
-    position:absolute;    
+    position:absolute;
 }
 .cn-center{
     width: 589px;
     padding-left:21px;
     float:left;
     position:relative;
+}
+.headquarters,.filiale{
+    position:absolute;
+    padding-left:20px;
+    font-size:12px;
+    color:#CECFD2;
+}
+.headquarters{   
+    bottom:40px;   
+}
+.filiale{
+    bottom:5px;
+}
+.headquartersSum,.filialeSum{
+    font-size:20px;
+    font-weight:bold;   
+}
+.headquartersSum{
+    color:#3CB9C8;
+}
+.filialeSum{
+    color:#C75A4A;
 }
 #center-map{
     width: 610px;
@@ -118,7 +224,7 @@ body,html{
 }
 .nav{
     width:999px;
-    height:190px;
+    height:177px;
     background: rgba(255, 255, 255, 0.03);
     float:left;
     margin-left:25px;
@@ -135,8 +241,8 @@ li{
     position: relative;
 }
 p{
-    height:30px;
-    line-height:30px;
+    height:23px;
+    line-height:23px;
     font-size:13px;
 }
 .warning{
